@@ -1,0 +1,23 @@
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #656565;
+}
+
+.date{
+    display: flex;
+}
+.date h1{
+   font-size: 3rem;
+   margin-right: 0.5rem;
+}
+.date div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.date div span:first-child{
+    font-weight: 600;
+}

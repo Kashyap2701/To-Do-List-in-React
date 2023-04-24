@@ -1,0 +1,21 @@
+
+.todo-list{
+    height: 80%;
+    overflow: auto;
+}
+
+.todo-list::-webkit-scrollbar{
+    display: none;
+}
+.todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5px;
+    color: #656565; 
+}
+
+.todo div img{
+    -webkit-user-drag: none;
+    cursor: pointer;
+}
