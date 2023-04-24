@@ -2,11 +2,24 @@
 .todo-list{
     height: 80%;
     overflow: auto;
+    position: relative;
 }
 
 .todo-list::-webkit-scrollbar{
     display: none;
 }
+
+.todo-backgrond{
+    object-fit: contain;
+    width: 300px;
+    opacity: 60%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-user-drag: none;
+}
+
 .todo{
     display: flex;
     align-items: center;

@@ -1,21 +1,12 @@
 import CheckedTodo from "./CheckedTodo";
 import UncheckTodo from "./UncheckTodo";
+import TodoBackground from '../assets/to-do-list-background.jpg'
 import style from './TodoList.module.css';
 
 function TodoList() {
   return (
     <div className={style['todo-list']}>
-        <CheckedTodo/>
-        <CheckedTodo/>
-        <CheckedTodo/>
-        <CheckedTodo/>
-        <CheckedTodo/>
-        <UncheckTodo/>
-        <UncheckTodo/>
-        <UncheckTodo/>
-        <UncheckTodo/>
-        <UncheckTodo/>
-        <UncheckTodo/>
+        <img className={style['todo-backgrond']} src={TodoBackground} alt="" />
     </div>
   )
 }
