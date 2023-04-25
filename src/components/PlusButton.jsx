@@ -1,11 +1,11 @@
 import { GrAdd } from "react-icons/gr";
 import style from './PlusButton.module.css';
 
-// stateless Component
-function PlusButton() {
+
+function PlusButton({handler}) {
   return (
-    <div className={style['add-icon']}>
-       <GrAdd  />
+    <div className={style['add-icon']}  onClick={handler} >
+       <GrAdd />
     </div>
   )
 }
