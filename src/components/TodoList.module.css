@@ -9,7 +9,7 @@
     display: none;
 }
 
-.todo-backgrond{
+.todo-list-backgrond{
     object-fit: contain;
     width: 300px;
     opacity: 60%;

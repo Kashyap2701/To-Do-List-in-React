@@ -3,10 +3,19 @@ import UncheckTodo from "./UncheckTodo";
 import TodoBackground from '../assets/to-do-list-background.jpg'
 import style from './TodoList.module.css';
 
-function TodoList() {
+function TodoList({todos,updateHandler}) {
+
   return (
     <div className={style['todo-list']}>
-        <img className={style['todo-backgrond']} src={TodoBackground} alt="" />
+        { todos?.length==0
+            ? <img className={style['todo-list-backgrond']} src={TodoBackground} alt="" />
+            : (
+              <>
+              <CheckedTodo todos={todos} updateHandler={updateHandler}/>
+              <UncheckTodo todos={todos} updateHandler={updateHandler}/>
+              </>
+            )
+        }
     </div>
   )
 }
