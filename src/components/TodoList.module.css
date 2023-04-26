@@ -27,6 +27,11 @@
     justify-content: space-between;
     padding: 10px 5px;
     color: #656565; 
+    cursor: pointer;
+}
+
+.todo:hover{
+    transform: scale(1.02);
 }
 
 .todo p{
