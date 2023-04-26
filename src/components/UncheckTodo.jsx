@@ -1,15 +1,19 @@
 import style from './TodoList.module.css';
 import unchecked from '../assets/unchecked.png';
 
-function UncheckTodo() {
+function UncheckTodo({todos,updateHandler}) {
   return (
-    <div className={style.todo}>
-        <p>Read an Artical</p>
-        <div>
-            <img width={25} src={unchecked} alt="" />
+    todos.filter(todo=>todo.status=='pending').map((todo)=>{
+      return(
+        <div key={todo.id} className={style.todo}>
+          <p title={todo.length>20 ? todo.task : ''}>{todo.task}</p>
+          <div>
+            <img width={25} src={unchecked} alt="" onClick={()=>updateHandler(todo)} />
+          </div>
         </div>
-    </div>
+      )
+    })
   )
 }
 
-export default UncheckTodo
+export default UncheckTodo;

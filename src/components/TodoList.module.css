@@ -2,17 +2,38 @@
 .todo-list{
     height: 80%;
     overflow: auto;
+    position: relative;
+    margin-bottom: 10px;
 }
 
 .todo-list::-webkit-scrollbar{
     display: none;
 }
+
+.todo-list-backgrond{
+    object-fit: contain;
+    width: 300px;
+    opacity: 60%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-user-drag: none;
+}
+
 .todo{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 5px;
     color: #656565; 
+}
+
+.todo p{
+    max-width: 15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .todo div img{

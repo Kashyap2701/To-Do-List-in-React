@@ -4,10 +4,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-body{
-  font-family: 'Poppins', sans-serif;
+input{
+    padding: 0.5rem;
+    width: 100%;
+    outline: none;
+    color: #656565;
+    border: 2px solid #56E4A7;
+    border-radius: 5px;
+}
+
+input:focus:invalid{
+  border-color: #e98073;
+}
+
+input:focus:valid{
+  border-color: #56E4A7;
 }
 
 .App{
@@ -20,8 +34,8 @@ body{
 }
 
 .container{
-  height: 75%;
-  min-width: 350px;
+  height: 80%;
+  width: 370px;
   background-color: #ffff;
   padding: 40px;
   position: relative;
