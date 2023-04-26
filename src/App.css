@@ -16,6 +16,14 @@ input{
     border-radius: 5px;
 }
 
+input:focus:invalid{
+  border-color: #e98073;
+}
+
+input:focus:valid{
+  border-color: #56E4A7;
+}
+
 .App{
   display: flex;
   background-color: #e5e1de;

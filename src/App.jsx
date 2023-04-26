@@ -35,9 +35,13 @@ function App() {
 
     // when key pressed will be ENTER KEY
     if(e.key=='Enter'){
+
+      if(task.trim()=='')
+        return;
+
       const todo = {
         id:v4(),
-        task:task,
+        task:task.trim(),
         status:'pending'
       }
       setTodos([...todos,todo]);
@@ -64,7 +68,15 @@ function App() {
             <TodoList todos={todos} updateHandler={updateTodoStatus}/>
             { isPlusButton 
               ? <PlusButton handler={PlusButtonHandler}/>
-              : <input type="text" placeholder="Add your Task" value={task} onChange={(e)=>setTask(e.target.value)} onKeyDown={inputHandler} autoFocus/>
+              : <input 
+                    type="text" 
+                    placeholder="Add your Task" 
+                    value={task} 
+                    onChange={(e)=>setTask(e.target.value)} 
+                    onKeyDown={inputHandler} 
+                    autoFocus
+                    required
+                />
             }
         </div>
       </div>

@@ -29,6 +29,13 @@
     color: #656565; 
 }
 
+.todo p{
+    max-width: 15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .todo div img{
     -webkit-user-drag: none;
     cursor: pointer;
