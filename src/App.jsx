@@ -10,12 +10,21 @@ function App() {
   const [isPlusButton,setPlusButton] = useState(true);
   const [task,setTask] = useState('');
   const [todos,setTodos] = useState(JSON.parse(localStorage.getItem('todos'))|| []);
-
+  // const [currentDate,setCurre]
 
   // whenever todos change store it to local storage
   useEffect(()=>{
     localStorage.setItem('todos',JSON.stringify(todos));
   },[todos]);
+  
+  useEffect(()=>{
+    const currentDate = new Date().toLocaleDateString();
+    const lastClearedDate = localStorage.getItem('lastClearedDate');
+    if (lastClearedDate !== currentDate) {
+      localStorage.clear();
+      localStorage.setItem('lastClearedDate', currentDate);
+    }
+  },[])
 
   const PlusButtonHandler = ()=>{
     setPlusButton(false);
