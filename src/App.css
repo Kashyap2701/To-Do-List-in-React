@@ -16,14 +16,6 @@ input{
     border-radius: 5px;
 }
 
-input:focus:invalid{
-  border-color: #e98073;
-}
-
-input:focus:valid{
-  border-color: #56E4A7;
-}
-
 .App{
   display: flex;
   background-color: #e5e1de;
@@ -35,8 +27,21 @@ input:focus:valid{
 
 .container{
   height: 80%;
-  width: 370px;
+  width: 400px;
   background-color: #ffff;
-  padding: 40px;
+  padding: 35px;
   position: relative;
+}
+
+.input-field{
+  position: relative;
+}
+.input-field p{
+  position: absolute;
+  right: 0;
+  top:-25px
+}
+
+.error{
+  color: #e98073;
 }
