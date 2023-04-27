@@ -35,8 +35,8 @@ input:focus:valid{
 
 .container{
   height: 80%;
-  width: 370px;
+  width: 400px;
   background-color: #ffff;
-  padding: 40px;
+  padding: 35px;
   position: relative;
 }

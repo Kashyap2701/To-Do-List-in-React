@@ -15,6 +15,7 @@ function App() {
   // whenever todos change store it to local storage
   useEffect(()=>{
     localStorage.setItem('todos',JSON.stringify(todos));
+    console.log(todos);
   },[todos]);
   
   useEffect(()=>{
@@ -56,9 +57,18 @@ function App() {
 
   // this function update the todo status
   const updateTodoStatus = (todo) => {
+    console.log('fdskfbd');
     const index = todos.findIndex(item=>item.id==todo.id);
     todos[index].status = (todos[index].status=='pending' ? 'completed' : 'pending');
     setTodos([...todos]);
+  }
+
+  const deleteHandler = (e,id)=>{
+    e.stopPropagation();
+    console.log('delete');
+    const newTodos = todos.filter(todo=>todo.id!=id);
+    console.log(newTodos);
+    setTodos([...newTodos]);
   }
 
   return (
@@ -66,7 +76,7 @@ function App() {
       <div className='App'>
         <div className='container'>
             <DisplayDate/>
-            <TodoList todos={todos} updateHandler={updateTodoStatus}/>
+            <TodoList todos={todos} updateTodoStatus={updateTodoStatus} deleteHandler={deleteHandler}/>
             { isPlusButton 
               ? <PlusButton handler={PlusButtonHandler}/>
               : <input 

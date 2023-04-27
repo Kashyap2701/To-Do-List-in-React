@@ -1,9 +1,10 @@
 
 .todo-list{
     height: 80%;
-    overflow: auto;
+    overflow-y: auto;
     position: relative;
     margin-bottom: 10px;
+    padding: 2px;
 }
 
 .todo-list::-webkit-scrollbar{
@@ -25,13 +26,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 5px;
+    padding: 10px 10px;
     color: #656565; 
-    cursor: pointer;
+    /* cursor: pointer; */
+    user-select: none;
+    position: relative;
 }
 
 .todo:hover{
-    transform: scale(1.02);
+    background-color: #f8f8f8;
+    border-radius: 5px;
 }
 
 .todo p{
@@ -44,4 +48,21 @@
 .todo div img{
     -webkit-user-drag: none;
     cursor: pointer;
+}
+
+.btn-delete {
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translate(-50%);
+    z-index: 10;
+}
+
+.todo:hover .btn-delete{
+    display: inline-flex;
+}
+
+.completed{
+    opacity:0.3;
 }
