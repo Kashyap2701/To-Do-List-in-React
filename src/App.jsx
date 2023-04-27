@@ -10,7 +10,7 @@ function App() {
   const [isPlusButton,setPlusButton] = useState(true);
   const [task,setTask] = useState('');
   const [todos,setTodos] = useState(JSON.parse(localStorage.getItem('todos'))|| []);
-  // const [currentDate,setCurre]
+  const [error,setError] = useState(false);
 
   // whenever todos change store it to local storage
   useEffect(()=>{
@@ -38,8 +38,13 @@ function App() {
     // when key pressed will be ENTER KEY
     if(e.key=='Enter'){
 
-      if(task.trim()=='')
+      if(task.trim()==''){
+        setError(true);
+        setTimeout(() => {
+          setError(false);
+        }, 2000);
         return;
+      }
 
       const todo = {
         id:v4(),
@@ -79,15 +84,22 @@ function App() {
             <TodoList todos={todos} updateTodoStatus={updateTodoStatus} deleteHandler={deleteHandler}/>
             { isPlusButton 
               ? <PlusButton handler={PlusButtonHandler}/>
-              : <input 
-                    type="text" 
-                    placeholder="Add your Task" 
-                    value={task} 
-                    onChange={(e)=>setTask(e.target.value)} 
-                    onKeyDown={inputHandler} 
-                    autoFocus
-                    required
-                />
+              : (
+                <>
+                <div className='input-field'>
+                {error && <p className='error'>enter valid input</p> }
+                  <input 
+                      type="text" 
+                      placeholder="Add your Task" 
+                      value={task} 
+                      onChange={(e)=>setTask(e.target.value)} 
+                      onKeyDown={inputHandler} 
+                      autoFocus
+                      required
+                  />
+                </div>
+                </>
+              )
             }
         </div>
       </div>

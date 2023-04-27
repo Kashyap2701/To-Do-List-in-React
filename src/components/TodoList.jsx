@@ -14,6 +14,7 @@ function TodoList({todos,updateTodoStatus,deleteHandler}) {
         }
     </div>
   )
+  
 }
 
 export default TodoList;
