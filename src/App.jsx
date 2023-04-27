@@ -23,6 +23,7 @@ function App() {
     if (lastClearedDate !== currentDate) {
       localStorage.clear();
       localStorage.setItem('lastClearedDate', currentDate);
+      setTodos([]);
     }
   },[])
 
