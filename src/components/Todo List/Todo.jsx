@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './TodoList.module.css';
-import checked from '../assets/checked.png'
-import unchecked from '../assets/unchecked.png';
-import cancel from "../assets/cancel.png";
+import checked from '../../assets/checked.png'
+import unchecked from '../../assets/unchecked.png';
+import cancel from "../../assets/cancel.png";
 
 function Todo({todos,updateTodoStatus,deleteHandler}) {
   return (

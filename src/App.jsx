@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import DisplayDate from './components/DisplayDate'
-import PlusButton from './components/PlusButton'
-import TodoList from './components/TodoList'
+import DisplayDate from './components/DisplayDate/DisplayDate'
+import PlusButton from './components/Plus Button/PlusButton'
+import TodoList from './components/Todo List/TodoList'
 import {v4} from 'uuid'
 
 function App() {

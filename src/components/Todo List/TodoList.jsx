@@ -1,4 +1,4 @@
-import TodoBackground from '../assets/to-do-list-background.jpg'
+import TodoBackground from '../../assets/to-do-list-background.jpg'
 import style from './TodoList.module.css';
 import Todo from "./Todo";
 
